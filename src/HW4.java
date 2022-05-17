@@ -197,14 +197,14 @@ public class HW4 {
 
             case 7:{
 
-                int[] arr7 = {7, 5, 1, 3, 8, 2};
+                int[] arr7 = {1, 5, 7, 3, 8, 2};
                 System.out.println(Arrays.toString(arr7));
                 //Сортировка пузырьком
                 int temp = 0;
                 for (int i = 0; i < arr7.length; i++) {
                     //temp = arr7[i];
                     //int k = 0;
-                    for (int j = 0; j < arr7.length-j; j++) {
+                    for (int j = 0; j < arr7.length-1; j++) {
                         if (arr7[j] > arr7[j + 1]){
                             temp = arr7[j + 1];
                             arr7[j + 1] = arr7[j];
