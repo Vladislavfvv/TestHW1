@@ -60,6 +60,24 @@ public class HW2 {
                 "Подсчитать сколько раз за сутки случается так, что слева от двоеточия показывается симметричная комбинация для той, " +
                 "что справа от двоеточия (например, 02:20, 11:11 или 15:51).");
 
+        System.out.println("18 - В американской армии считается несчастливым число 13, а в японской — 4. " +
+                "Перед международными учениями штаб российской армии решил исключить номера боевой техники, " +
+                "содержащие числа 4 или 13 (например, 40123, 13313, 12345 или 13040), чтобы не смущать иностранных коллег. " +
+                "Если в распоряжении армии имеется 100 тыс. единиц боевой техники и каждая боевая машина имеет номер от 00001 до 99999, " +
+                "то сколько всего номеров придётся исключить?\n");
+
+
+        System.out.println("19 - Для введённого пользователем с клавиатуры натурального числа посчитайте сумму всех его цифр " +
+                "(заранее не известно сколько цифр будет в числе)");
+
+        System.out.println("20 - Проверьте, является ли введённое пользователем с клавиатуры натуральное число — простым. " +
+                "Постарайтесь не выполнять лишних действий (например, после того, как вы нашли хотя бы один нетривиальный делитель уже ясно, " +
+                "что число составное и проверку продолжать не нужно). Также учтите, что наименьший делитель натурального числа n, если он вообще имеется, " +
+                "обязательно располагается в отрезке [2; ?n].\n");
+
+        //Выведите на экран все двузначные члены последовательности 2an-1+200, где a1= –166.
+
+
         Scanner scanner = new Scanner(System.in);
         int sc = scanner.nextInt();
 
@@ -86,7 +104,7 @@ public class HW2 {
                         break;
                     }
 
-                    default:{
+                    default: {
                         System.out.println("Вы ввели неправильное число");
                     }
 
@@ -249,7 +267,7 @@ public class HW2 {
                 } while (i <= 20);
             }
 
-            case 12:{
+            case 12: {
                 int num = 1;
                 int prev = 0;
                 int fib = 0;
@@ -263,7 +281,7 @@ public class HW2 {
             }
 
             case 13: {
-                while(true){
+                while (true) {
                     System.out.println("Введите сумму вклада");
                     float deposit = scanner.nextInt();
                     System.out.println("Введите количество месяцев");
@@ -284,17 +302,17 @@ public class HW2 {
             case 14: {
                 int mult = 0;
                 for (int i = 1; i < 11; i++) {
-                   // System.out.print( "|");
+                    // System.out.print( "|");
                     for (int j = 1; j < 11; j++) {
                         mult = i * j;
-                        if(mult < 10 ) System.out.print(mult + "  ");
-                        else System.out.print(mult  + " ");
+                        if (mult < 10) System.out.print(mult + "  ");
+                        else System.out.print(mult + " ");
                     }
                     System.out.println();
                 }
             }
 
-            case 15:{
+            case 15: {
                 int count = 0;
                 int sum1 = 0;
                 int sum2 = 0;
@@ -307,11 +325,11 @@ public class HW2 {
                     n5 = (i / 10000) % 10;
                     n6 = (i / 100000) % 10;
                     sum1 = n1 + n2 + n3;
-                    sum2 = n4 + n5+ n6;
-                    if(sum1 == sum2) count++;
+                    sum2 = n4 + n5 + n6;
+                    if (sum1 == sum2) count++;
                 }
                 System.out.println("Число счастливых билетов " + count);
-                }
+            }
 
             case 16: {
                 int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0;
@@ -322,8 +340,7 @@ public class HW2 {
                     a3 = (i / 100) % 10;
                     a4 = (i / 1000) % 10;
                     a5 = (i / 10000) % 10;
-                    if((a1 == 2) || (a2 == 2) || (a3 == 2) || (a4 == 2) || (a5 == 2))
-                    {
+                    if ((a1 == 2) || (a2 == 2) || (a3 == 2) || (a4 == 2) || (a5 == 2)) {
                         count++;
                     }
                 }
@@ -339,12 +356,16 @@ public class HW2 {
                     for (int j = 0; j <= 24; j++) {
                         h = i;
                         m = j;
-                        if(h == m){ count++;}
+                        if (h == m) {
+                            count++;
+                        }
                         t1 = i % 10;
-                        t2 = (i/10) % 10;
-                        h = t2*10 + t1;
+                        t2 = (i / 10) % 10;
+                        h = t2 * 10 + t1;
                         //else if
-                        if(h == m) { count++;}
+                        if (h == m) {
+                            count++;
+                        }
                         System.out.print(h + " : " + m);
                         System.out.println();
                     }
@@ -353,13 +374,75 @@ public class HW2 {
                 }
             }
 
+            case 18: {
+                int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0, a6 = 0;
+                int count = 0;
+                for (int i = 100000; i > 1; i--) {
+                    a1 = i % 10;
+                    a2 = (i / 10) % 10;
+                    a3 = (i / 100) % 10;
+                    a4 = (i / 1000) % 10;
+                    a5 = (i / 10000) % 10;
+                    a5 = (i / 100000) % 10;
+                    if ((a1 % 10 == 4) || (a2 % 10 == 4) || (a3 % 10 == 4) || (a4 % 10 == 4) || (a5 % 10 == 4) || (a6 % 10 == 4)) {
+                        count++;
+                    }
+                }
+                int count2 = 0;
+                int b1 = 0, b2 = 0, b3 = 0, b4 = 0, b5 = 0;
+                int num = 100000;
+                for (int j = 100000; j > 1; j--) {
+                    b1 = j % 100;
+                    b2 = (j / 10) % 100;
+                    b3 = (j / 100) % 100;
+                    b4 = (j / 1000) % 100;
+                    b5 = (j / 10000) % 100;
+                    if ((b1 == 13) || (b2 == 13) || (b3 == 13) || (b4 == 13) || (b5 == 13)) {
+                        count2++;
+                    }
+                }
+                int sum18 = count + count2;
+                System.out.println("Japan: " + count + "\n" + "USA: " + count2 + "\n" + "Total: " + sum18 + " exclude numbers");
+                System.out.println();
             }
 
+            case 19: {
+                System.out.println("Enter number");
+                int num = scanner.nextInt();
+                int sum = 0;
+                int i = 1;
+                int m = 0;
+                do {
+                    m = num % 10;
+                    sum = sum + m;
+                    num = num / 10;
+                } while (num > 0);
+                System.out.println("Total summa: " + sum);
+            }
+
+            case 20: {
+                System.out.println("Введите число, до которого нужно вычислить все простые числа: ");
+                int n = scanner.nextInt();
+                int sqrt = Math.sqrt(n);
+                int[] arr = new int[n];
+                for (int i = 3; i < Math.sqrt(n); i += 2) {
+                    if (i % 2 == 2) {
+                        continue;
+
+                    }
+                }
+            }
 
         }
 
 
     }
+
+
+}
+
+
+
 
 
 
